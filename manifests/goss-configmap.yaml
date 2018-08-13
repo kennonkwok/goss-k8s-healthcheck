@@ -1,0 +1,24 @@
+apiVersion: v1
+data:
+  goss.yaml: |
+    command:
+      kubectl cluster-info:
+        exit-status: 0
+        stderr: []
+        timeout: 3000
+      kubectl get componentstatus:
+        exit-status: 0
+        stderr: []
+        timeout: 3000
+      kubectl get nodes:
+        exit-status: 0
+        stderr: []
+        timeout: 3000
+      kubectl get pods --all-namespaces:
+        exit-status: 0
+        stderr: []
+        timeout: 3000
+kind: ConfigMap
+metadata:
+  name: goss-configmap
+  namespace: goss
