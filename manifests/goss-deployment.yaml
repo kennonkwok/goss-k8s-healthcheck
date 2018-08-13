@@ -38,7 +38,7 @@ subjects:
   namespace: goss
 roleRef:
   kind: ClusterRole
-  name: goss-readonly-clusterole
+  name: goss-readonly-clusterrole
   apiGroup: rbac.authorization.k8s.io
 
 ---
