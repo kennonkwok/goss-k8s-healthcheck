@@ -61,7 +61,7 @@ spec:
     spec:
       serviceAccountName: goss-readonly-serviceaccount
       containers:
-      - image: td-goss
+      - image: kennonkwok/goss-kubernetes
         imagePullPolicy: Never
         name: goss
         resources: {}
