@@ -93,4 +93,4 @@ spec:
     protocol: TCP
   selector:
     run: goss
-  type: NodePort
+  type: LoadBalancer
