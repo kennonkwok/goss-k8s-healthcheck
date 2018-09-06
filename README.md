@@ -43,3 +43,6 @@ This repo includes a `goss-configmap.yaml` with a sample configuration.  The ima
     kubectl apply -f goss-deployment.yaml
 
 This will set up the namespace, serviceaccount, role, and service for the goss healthcheck. Edit as needed to change deployment details or allow more permissions in the role.
+
+### goss service
+`goss-deployment.yaml` contains a service definition to expose the goss service.  To use this, simply call the url `http://<service-IP>:<service-port>/healthz`. The response is JSON formatted (this is tunable in `goss-deployment.yaml`) 
