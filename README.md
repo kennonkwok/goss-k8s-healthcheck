@@ -39,4 +39,7 @@ This repo includes a `goss-configmap.yaml` with a sample configuration.  The ima
       name: goss-configmap
       namespace: goss
 
-###
+### using `goss-deployment`
+    kubectl apply -f goss-deployment.yaml
+
+This will set up the namespace, serviceaccount, role, and service for the goss healthcheck. Edit as needed to change deployment details or allow more permissions in the role.
