@@ -61,7 +61,7 @@ spec:
     spec:
       serviceAccountName: goss-readonly-serviceaccount
       containers:
-      - image: kennonkwok/goss-kubernetes
+      - image: kennonkwok/goss-k8s-healthcheck
         name: goss
         resources: {}
         command: [ "/bin/sh", "-c", "kubectl config set-credentials goss --token=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token) && goss s --format json"]
