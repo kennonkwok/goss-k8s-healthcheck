@@ -1,6 +1,7 @@
-FROM alpine:3.4
+FROM alpine:3.8
 
 ENV GOSS_VER v0.3.6
+ENV KUBECTL_VER v1.12.2
 ENV PATH=/goss:$PATH
 
 # Install goss
@@ -9,7 +10,7 @@ RUN apk add --no-cache curl ca-certificates && \
     curl -fsSL https://goss.rocks/install | GOSS_DST=/goss sh 
 
 # setup kubectl
-RUN curl -Lo /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && \
+RUN curl -Lo /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/$KUBECTL_VER/bin/linux/amd64/kubectl && \
     chmod 755 /usr/bin/kubectl && \
     kubectl config set-cluster local --server=https://kubernetes.default --certificate-authority=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt && \
     kubectl config set-context local --cluster=local --user=goss && \
